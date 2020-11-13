@@ -43,7 +43,12 @@ function App() {
         My Reads
       </Header>
       <Content>
-        <Books data={data} changeShelf={changeShelf} warning={warning} />
+        <Books
+          data={data}
+          changeShelf={changeShelf}
+          warning={warning}
+          update={update}
+        />
       </Content>
     </Layout>
   );

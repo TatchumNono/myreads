@@ -10,6 +10,7 @@ const Search = (props) => {
   const { visible, showSearch, data, changeShelf } = props;
   const [query, setQuery] = useState("");
   const [result, setResults] = useState([]);
+  const [ver, setVer] = useState([]);
 
   const { Meta } = Card;
 
@@ -32,6 +33,19 @@ const Search = (props) => {
             console.log(error);
           });
   }, [query]);
+
+  useEffect(() => {
+    let filteredArray = [];
+    let newObj = {};
+    data.forEach((item) => {
+      newObj.id = item.id;
+      newObj.shelf = item.shelf;
+      filteredArray.push(newObj);
+    });
+    setVer(() => filteredArray);
+  }, [data]);
+
+  console.log(ver);
 
   return (
     <div>

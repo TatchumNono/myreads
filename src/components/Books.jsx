@@ -8,7 +8,7 @@ import "../App.css";
 const { Meta } = Card;
 
 const Books = (props) => {
-  const { data, changeShelf, warning } = props;
+  const { data, changeShelf, warning, update } = props;
   const [visible, setVisible] = useState(false);
 
   const showSearch = () => {
@@ -165,6 +165,7 @@ const Books = (props) => {
           showSearch={showSearch}
           data={data}
           changeShelf={changeShelf}
+          update={update}
         />
 
         <div className='open-search'>
