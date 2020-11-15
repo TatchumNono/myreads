@@ -20,10 +20,7 @@ const Search = (props) => {
     setQuery(e.target.value);
   };
 
-  const goBack = () => {
-    let path = `/`;
-    history.push(path);
-  };
+  const goBack = ()
 
   useEffect(() => {
     query === ""
@@ -63,7 +60,6 @@ const Search = (props) => {
               type='default'
               shape='circle'
               icon={<ArrowLeftOutlined />}
-              onClick={goBack}
             />
           </Col>
           <Col flex='auto'>

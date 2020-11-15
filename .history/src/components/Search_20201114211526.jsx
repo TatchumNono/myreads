@@ -63,7 +63,7 @@ const Search = (props) => {
               type='default'
               shape='circle'
               icon={<ArrowLeftOutlined />}
-              onClick={goBack}
+              onClick={g}
             />
           </Col>
           <Col flex='auto'>

@@ -5,24 +5,17 @@ import * as api from "../BooksAPI";
 import logo from "../404.jpg";
 //import { EllipsisOutlined, CheckOutlined } from "@ant-design/icons";
 import { EllipsisOutlined, CheckOutlined } from "@ant-design/icons";
-import { useHistory } from "react-router-dom";
 
 const Search = (props) => {
   const { data, changeShelf } = props;
   const [query, setQuery] = useState("");
   const [result, setResults] = useState([]);
   const [ver, setVer] = useState([]);
-  let history = useHistory();
 
   const { Meta } = Card;
 
   const change = (e) => {
     setQuery(e.target.value);
-  };
-
-  const goBack = () => {
-    let path = `/`;
-    history.push(path);
   };
 
   useEffect(() => {
@@ -55,7 +48,7 @@ const Search = (props) => {
   console.log(ver);
 
   return (
-    <div style={{ padding: "20px 20px" }}>
+    <div style={{pad}}>
       <div>
         <Row>
           <Col flex='40px'>
@@ -63,7 +56,6 @@ const Search = (props) => {
               type='default'
               shape='circle'
               icon={<ArrowLeftOutlined />}
-              onClick={goBack}
             />
           </Col>
           <Col flex='auto'>

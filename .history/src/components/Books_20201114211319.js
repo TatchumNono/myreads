@@ -14,6 +14,7 @@ const Books = (props) => {
 
   const links = () => {
     let path = `/search`;
+
     history.push(path);
   };
 

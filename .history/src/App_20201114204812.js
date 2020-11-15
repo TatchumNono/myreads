@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import * as api from "./BooksAPI";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Main from "./components/Main";
-import Search from "./components/Search";
+import Main from "../components/Main";
+import Search from "../components/Search";
 
 function App() {
   const [data, setData] = useState([]);
@@ -37,24 +36,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Switch>
-          <Route
-            exact
-            path='/'
-            render={(props) => (
-              <Main
-                {...props}
-                data={data}
-                changeShelf={changeShelf}
-                warning={warning}
-              />
-            )}
-          />
-          <Route
-            path='/search'
-            render={(props) => (
-              <Search {...props} data={data} changeShelf={changeShelf} />
-            )}
-          />
+          <Route exact path='/' component={Main} />
+          <Route path='/search' component={Search} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -49,12 +49,7 @@ function App() {
               />
             )}
           />
-          <Route
-            path='/search'
-            render={(props) => (
-              <Search {...props} data={data} changeShelf={changeShelf} />
-            )}
-          />
+          <Route path='/search' component={Search} />
         </Switch>
       </BrowserRouter>
     </div>

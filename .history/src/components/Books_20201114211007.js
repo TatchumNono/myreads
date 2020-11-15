@@ -10,12 +10,12 @@ const { Meta } = Card;
 
 const Books = (props) => {
   const { data, changeShelf, warning } = props;
-  let history = useHistory();
 
-  const links = () => {
+  const switch = () =>{
     let path = `/search`;
+    let history = useHistory();
     history.push(path);
-  };
+  }
 
   //console.log(data);
   //currentlyReading
@@ -164,7 +164,10 @@ const Books = (props) => {
           ))}
 
         <div className='open-search'>
-          <button onClick={links}>Add a book</button>
+          <button>
+           
+            Add a book
+          </button>
         </div>
       </Row>
     </div>

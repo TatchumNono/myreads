@@ -21,7 +21,7 @@ const Search = (props) => {
   };
 
   const goBack = () => {
-    let path = `/`;
+    let path = `/search`;
     history.push(path);
   };
 
@@ -63,7 +63,6 @@ const Search = (props) => {
               type='default'
               shape='circle'
               icon={<ArrowLeftOutlined />}
-              onClick={goBack}
             />
           </Col>
           <Col flex='auto'>

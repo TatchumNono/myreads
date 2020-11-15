@@ -49,12 +49,14 @@ function App() {
               />
             )}
           />
-          <Route
-            path='/search'
-            render={(props) => (
-              <Search {...props} data={data} changeShelf={changeShelf} />
-            )}
-          />
+          <Route path='/search' render={(props) => (
+              <Sea
+                {...props}
+                data={data}
+                changeShelf={changeShelf}
+                warning={warning}
+              />
+            )} />
         </Switch>
       </BrowserRouter>
     </div>

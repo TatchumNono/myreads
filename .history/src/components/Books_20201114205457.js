@@ -2,20 +2,14 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Divider, Row, Col, Card, Menu, Dropdown } from "antd";
 import { EllipsisOutlined, CheckOutlined } from "@ant-design/icons";
-import { useHistory } from "react-router-dom";
+import Search from "./Search";
 
 import "../App.css";
 
 const { Meta } = Card;
 
 const Books = (props) => {
-  const { data, changeShelf, warning } = props;
-  let history = useHistory();
-
-  const links = () => {
-    let path = `/search`;
-    history.push(path);
-  };
+  const { data, changeShelf, warning, update } = props;
 
   //console.log(data);
   //currentlyReading
@@ -164,7 +158,7 @@ const Books = (props) => {
           ))}
 
         <div className='open-search'>
-          <button onClick={links}>Add a book</button>
+          <button >Add a book</button>
         </div>
       </Row>
     </div>

@@ -10,10 +10,10 @@ const { Meta } = Card;
 
 const Books = (props) => {
   const { data, changeShelf, warning } = props;
-  let history = useHistory();
 
   const links = () => {
     let path = `/search`;
+    
     history.push(path);
   };
 

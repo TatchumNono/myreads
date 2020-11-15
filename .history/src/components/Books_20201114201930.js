@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "antd/dist/antd.css";
 import { Divider, Row, Col, Card, Menu, Dropdown } from "antd";
 import { EllipsisOutlined, CheckOutlined } from "@ant-design/icons";
-import { useHistory } from "react-router-dom";
-
+import Search from "./Search";
 import "../App.css";
 
 const { Meta } = Card;
 
 const Books = (props) => {
-  const { data, changeShelf, warning } = props;
-  let history = useHistory();
+  const { data, changeShelf, warning, update } = props;
 
-  const links = () => {
-    let path = `/search`;
-    history.push(path);
+  const showSearch = () => {
+    visible === false ? setVisible(true) : setVisible(false);
   };
 
   //console.log(data);
@@ -162,9 +159,16 @@ const Books = (props) => {
               </Card>
             </Col>
           ))}
+        <Search
+          visible={visible}
+          showSearch={showSearch}
+          data={data}
+          changeShelf={changeShelf}
+          update={update}
+        />
 
         <div className='open-search'>
-          <button onClick={links}>Add a book</button>
+          <button onClick={showSearch}>Add a book</button>
         </div>
       </Row>
     </div>

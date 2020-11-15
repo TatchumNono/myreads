@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { Layout } from "antd";
+import "antd/dist/antd.css";
+//import "antd/dist/antd.less";
 import * as api from "./BooksAPI";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Main from "./components/Main";
-import Search from "./components/Search";
+import Books from "./components/Books";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+const { Header, Content } = Layout;
 
 function App() {
   const [data, setData] = useState([]);
@@ -33,31 +37,21 @@ function App() {
   }, [update]);
 
   console.log(data);
+
   return (
-    <div>
-      <BrowserRouter>
-        <Switch>
-          <Route
-            exact
-            path='/'
-            render={(props) => (
-              <Main
-                {...props}
-                data={data}
-                changeShelf={changeShelf}
-                warning={warning}
-              />
-            )}
-          />
-          <Route
-            path='/search'
-            render={(props) => (
-              <Search {...props} data={data} changeShelf={changeShelf} />
-            )}
-          />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <Layout>
+      <Header style={{ textAlign: "center", fontSize: "2rem", color: "white" }}>
+        My Reads
+      </Header>
+      <Content>
+        <Books
+          data={data}
+          changeShelf={changeShelf}
+          warning={warning}
+          update={update}
+        />
+      </Content>
+    </Layout>
   );
 }
 

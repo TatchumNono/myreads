@@ -12,17 +12,11 @@ const Search = (props) => {
   const [query, setQuery] = useState("");
   const [result, setResults] = useState([]);
   const [ver, setVer] = useState([]);
-  let history = useHistory();
 
   const { Meta } = Card;
 
   const change = (e) => {
     setQuery(e.target.value);
-  };
-
-  const goBack = () => {
-    let path = `/`;
-    history.push(path);
   };
 
   useEffect(() => {
@@ -63,7 +57,6 @@ const Search = (props) => {
               type='default'
               shape='circle'
               icon={<ArrowLeftOutlined />}
-              onClick={goBack}
             />
           </Col>
           <Col flex='auto'>
