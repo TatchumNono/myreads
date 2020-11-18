@@ -73,7 +73,8 @@ const Search = (props) => {
       <Row gutter={[16, 16]}>
         <Divider orientation='left'>Books Already in Shelf</Divider>
         {result.length
-          ? result.map((resultItem, i) =>
+          ? //display the books present in the data and result array
+            result.map((resultItem, i) =>
               data.map((dataItem) =>
                 dataItem.id === resultItem.id ? (
                   <Col style={{ padding: " 32px 32px" }} span={6} key={i}>

@@ -8,14 +8,17 @@ import "../App.css";
 const { Meta } = Card;
 
 const Books = (props) => {
+  //recieving and destructuring props
   const { data, changeShelf, warning } = props;
   let history = useHistory();
 
+  //function to navigate to the search page
   const links = () => {
     let path = `/search`;
     history.push(path);
   };
 
+  //filtering the data array to display books depending on thier shelves
   return (
     <div>
       <Row>
