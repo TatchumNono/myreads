@@ -77,7 +77,10 @@ const Search = (props) => {
             result.map((resultItem, i) =>
               data.map((dataItem) =>
                 dataItem.id === resultItem.id ? (
-                  <Col style={{ padding: " 32px 32px" }} span={6} key={i}>
+                  <Col
+                    style={{ padding: " 32px 32px" }}
+                    span={6}
+                    key={dataItem.id}>
                     <Card
                       key={resultItem.id}
                       hoverable
@@ -166,7 +169,7 @@ const Search = (props) => {
               //so returns a new array where the ids element are filtered from the result array
               .filter((resultItem) => !ids.includes(resultItem.id))
               .map((book, index) => (
-                <Col style={{ padding: " 32px 32px" }} span={6} key={index}>
+                <Col style={{ padding: " 32px 32px" }} span={6} key={book.id}>
                   <Card
                     key={book.id}
                     hoverable
